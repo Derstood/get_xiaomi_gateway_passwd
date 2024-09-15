@@ -72,7 +72,6 @@ def parse_input(file_path):
                 for key, value in params.items():
                     params[key] = value[0]
                 data = {key: value for key, value in params.items()}
-                print(data)
         else:
             if ": " in line:
                 key, value = line.split(": ", 1)
@@ -97,8 +96,8 @@ try:
     passcode = response_data['result']['passcode']
 except Exception as e:
     print("Error:", e)
-    sleep(6)
-    exit()
+    sleep(30)
+    exit(0)
 
 print("提取到的六位数字:", passcode)
 while True:
